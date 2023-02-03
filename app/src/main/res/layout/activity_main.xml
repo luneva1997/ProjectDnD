@@ -7,6 +7,17 @@
     android:background="@color/green"
     tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/light_grey_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="17" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/DndBook"
         android:layout_width="80dp"
@@ -14,9 +25,11 @@
         android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
+        android:focusable="true"
         android:contentDescription="@string/DnDBook"
-        android:foreground="@drawable/bookqwestion"
+        android:foreground="@drawable/book_question"
         android:foregroundGravity="clip_horizontal|center|clip_vertical"
+        android:onClick="toDnDBook"
         app:backgroundTint="@color/light_grey_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,9 +42,11 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
+        android:focusable="true"
         android:contentDescription="@string/Adventure"
         android:foreground="@drawable/plus"
         android:foregroundGravity="clip_horizontal|center|clip_vertical"
+        android:onClick="toAdventure"
         app:backgroundTint="@color/light_grey_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,21 +58,15 @@
         android:layout_height="80dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
+        android:focusable="true"
         android:contentDescription="@string/Settings"
         android:foreground="@drawable/settings"
         android:foregroundGravity="clip_horizontal|center|clip_vertical"
+        android:onClick="toSettings"
         app:backgroundTint="@color/light_grey_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Adventure"
         app:layout_constraintStart_toEndOf="@+id/DndBook"
         app:rippleColor="@color/black" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/light_grey_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

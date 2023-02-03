@@ -13,6 +13,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,17 +22,49 @@
         </activity>
         <activity
             android:name=".Adventure"
-            android:exported="false"
-            android:label="@string/title_activity_adventure">
+            android:exported="true"
+            android:label="@string/title_activity_adventure"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+            <intent-filter>
+                <action android:name=".Adventure"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".DnDBook"
-            android:label="@string/title_activity_dndbook">
+            android:exported="true"
+            android:label="@string/title_activity_dndbook"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"
+                />
+            <intent-filter>
+                <action android:name=".DnDBook" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
             android:name=".Settings"
-            android:lable="@string/title_activity_settings">
+            android:exported="true"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+            <intent-filter>
+                <action android:name=".Settings" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

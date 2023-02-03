@@ -2,11 +2,12 @@
     <string name="app_name">ДnД записная</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_adventure">Приключение</string>
-    <string name="title_activity_dndbook"></string>
+    <string name="title_activity_dndbook">ДнД книга</string>
     <string name="title_activity_settings">Настройки</string>
 
     <string name="DnDBook">DnDBook Button</string>
     <string name="Adventure">Add adventure Button</string>
     <string name="Settings">Settings Button</string>
 
+    <string name="Alert">Данный модуль в данный момент находится в стадии разработки. Пожалуйста, подождите. Пока можете сделать пожертвование для разработки</string>
 </resources>
