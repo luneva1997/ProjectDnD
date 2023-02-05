@@ -12,8 +12,11 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:background="@color/light_grey_green"
+        android:clickable="true"
+        android:focusable="true"
         android:onClick="back"
-        android:text="@string/Settings"
+        android:text="Настройки"
+        android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

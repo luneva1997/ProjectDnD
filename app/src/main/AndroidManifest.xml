@@ -11,12 +11,28 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
+            android:name=".Note"
+            android:exported="false" />
+        <activity
+            android:name=".Qwest"
+            android:exported="false" />
+        <activity
+            android:name=".NPC"
+            android:exported="false" />
+        <activity
+            android:name=".Location"
+            android:exported="false" />
+        <activity
+            android:name=".Character"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,14 +40,14 @@
             android:name=".Adventure"
             android:exported="true"
             android:label="@string/title_activity_adventure"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:parentActivityName=".MainActivity"
-            >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
+
             <intent-filter>
-                <action android:name=".Adventure"/>
+                <action android:name=".Adventure" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -39,30 +55,31 @@
             android:name=".DnDBook"
             android:exported="true"
             android:label="@string/title_activity_dndbook"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
+                android:value=".MainActivity" />
+
             <intent-filter>
                 <action android:name=".DnDBook" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Settings"
             android:exported="true"
             android:label="@string/title_activity_settings"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:parentActivityName=".MainActivity"
-            >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
+
             <intent-filter>
                 <action android:name=".Settings" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

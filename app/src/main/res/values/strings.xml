@@ -8,6 +8,7 @@
     <string name="DnDBook">DnDBook Button</string>
     <string name="Adventure">Add adventure Button</string>
     <string name="Settings">Settings Button</string>
+    <string name="button">Кнопка меню</string>
 
     <string name="Alert">Данный модуль в данный момент находится в стадии разработки. Пожалуйста, подождите. Пока можете сделать пожертвование для разработки</string>
 </resources>
