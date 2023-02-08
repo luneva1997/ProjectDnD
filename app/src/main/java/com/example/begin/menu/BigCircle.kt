@@ -7,13 +7,22 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.content.ContextCompat.getColor
 import com.example.begin.R
+import kotlinx.coroutines.*
+
 
 class BigCircle (context: Context, attr: AttributeSet?=null): View(context, attr){
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val path = Path()
+    private var color1 = getColor(context, R.color.light_grey_green)
+    private var color2 = getColor(context, R.color.green)
+    private var color3 = getColor(context, R.color.blue)
+    var State = StatusButton.CLOSE
     private var devider = 10
     var BigCircleDiametr = getScreenWidth()/devider*2
+    val background = Background(context, attr)
+    val scope = CoroutineScope(Dispatchers.IO)
 
     fun getScreenWidth(): Int{
         return Resources.getSystem().displayMetrics.widthPixels
@@ -25,11 +34,57 @@ class BigCircle (context: Context, attr: AttributeSet?=null): View(context, attr
 
     override fun onDraw(canvas: Canvas){
         super.onDraw(canvas)
-        paint.color = resources.getColor(R.color.light_grey_green)
+        drawButton(canvas)
+    }
+
+    private fun drawButton(canvas: Canvas){
+        path.reset()
+        if (State == StatusButton.CLOSE) {
+            drawCircle(canvas, color1, devider.toDouble())
+        }
+        if (State == StatusButton.TRANSITION) {
+            drawCircle(canvas, color2, (devider).toDouble())
+        }
+        if (State == StatusButton.OPEN) {
+            drawCircle(canvas, color3, (devider*1.1).toDouble())
+            }
+        }
+    var BigCircle = findViewById<BigCircle>(R.id.AddCircle)
+    fun ClickMenu() = runBlocking{
+        GlobalScope.launch {
+                BigCircle.State = StatusButton.TRANSITION
+                BigCircle.invalidate()
+                delay(100)
+                BigCircle.State = StatusButton.OPEN
+                BigCircle.invalidate()
+                delay(5000)
+                BigCircle.State = StatusButton.TRANSITION
+                BigCircle.invalidate()
+                delay(100)
+                BigCircle.State = StatusButton.CLOSE
+                BigCircle.invalidate()
+    }
+    }
+
+
+    fun Stable(){
+        BigCircle.State = StatusButton.CLOSE
+        BigCircle.invalidate()
+    }
+
+
+    fun drawCircle(canvas: Canvas, color:Int, d: Double){
+        paint.color = color
         paint.style = Paint.Style.FILL
-        path.addCircle((getScreenWidth()/devider).toFloat(), (getScreenWidth()/devider).toFloat(), (getScreenWidth()/devider).toFloat(), Path.Direction.CCW)
+        var a = getScreenWidth()/d.toFloat()
+        path.addCircle(a, a, a, Path.Direction.CCW)
         canvas.drawPath(path, paint)
     }
 
-    //override fun onClick(){}
-}
+    /*fun startAnimation(){
+        var colorFrom = getColor(context, R.color.light_grey_green)
+        var colorTo = getColor(context, R.color.black)
+        var colorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), colorFrom, colorTo)
+        colorAnimation.setDuration(30L)
+        colorAnimation.start()*/
+    }
