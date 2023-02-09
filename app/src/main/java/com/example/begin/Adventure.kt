@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.begin.menu.BigCircle
 import com.example.begin.menu.StatusButton
+import com.example.begin.presentation.adventures.list.AdventuresListActivity
 import kotlinx.coroutines.*
 
 
@@ -36,7 +37,7 @@ class Adventure : AppCompatActivity() {
 
 
     fun back(view: View) {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, AdventuresListActivity::class.java)
         startActivity(intent)
     }
 }

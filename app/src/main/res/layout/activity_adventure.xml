@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green"
-    tools:context=".Adventure" >
+    tools:context=".AdventureActivity">
 
     <Button
         android:id="@+id/button2"
@@ -21,5 +21,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <include layout="@layout/menu"/>
+    <include layout="@layout/menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
