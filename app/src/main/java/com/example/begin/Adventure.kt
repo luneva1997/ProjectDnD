@@ -10,6 +10,7 @@ import com.example.begin.menu.Background
 import com.example.begin.menu.BigCircle
 import com.example.begin.menu.Circle
 import com.example.begin.menu.StatusButton
+import com.example.begin.presentation.adventures.list.AdventuresListActivity
 import kotlinx.coroutines.*
 
 
@@ -61,6 +62,11 @@ class Adventure : AppCompatActivity() {
             }
 
 
+
+    fun back(view: View) {
+        val intent = Intent(this, AdventuresListActivity::class.java)
+        startActivity(intent)
+
         //first.setOnClickListener {
         //    first.update()
         //    var toast = Toast.makeText(this, "Это первая кнопка", Toast.LENGTH_LONG)
@@ -90,11 +96,6 @@ class Adventure : AppCompatActivity() {
             //var toast = Toast.makeText(this, "Это пятая кнопка", Toast.LENGTH_LONG)
             //toast.show()
         //}
-    }
 
-        fun back(view: View) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
 }
