@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.Path
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
@@ -15,6 +16,8 @@ class Background (context: Context, attr: AttributeSet?=null): View(context, att
     var State = StatusButton.CLOSE
     private var color1 = resources.getColor(R.color.blue)
     private var color2 = resources.getColor(R.color.black)
+    private val path = Path()
+
 
     fun getScreenWidth(): Int{
         return Resources.getSystem().displayMetrics.widthPixels
@@ -26,21 +29,20 @@ class Background (context: Context, attr: AttributeSet?=null): View(context, att
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        drawArc(canvas, color1)
-        }
+        //path.reset()add
+        drawArc(canvas, color1)}
+
 
 
     var background = findViewById<Background>(R.id.background)
-
-    fun status() {
-        State = StatusButton.OPEN
-    }
 
     fun drawArc(canvas: Canvas, color:Int){
         paint.color =  color
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = getScreenWidth().toFloat()/5
         canvas.drawArc(oval, 270F, 360F, true, paint)
+        //path.addArc(oval, 270F, 360F)
+        //canvas.drawPath(path, paint)
     }
 
 }

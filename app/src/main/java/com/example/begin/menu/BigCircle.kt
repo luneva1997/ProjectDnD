@@ -21,7 +21,6 @@ class BigCircle (context: Context, attr: AttributeSet?=null): View(context, attr
     var State = StatusButton.CLOSE
     private var devider = 10
     var BigCircleDiametr = getScreenWidth()/devider*2
-    val background = Background(context, attr)
     val scope = CoroutineScope(Dispatchers.IO)
 
     fun getScreenWidth(): Int{
@@ -50,21 +49,23 @@ class BigCircle (context: Context, attr: AttributeSet?=null): View(context, attr
             }
         }
     var BigCircle = findViewById<BigCircle>(R.id.AddCircle)
-    fun ClickMenu() = runBlocking{
-        GlobalScope.launch {
-                BigCircle.State = StatusButton.TRANSITION
-                BigCircle.invalidate()
-                delay(100)
-                BigCircle.State = StatusButton.OPEN
-                BigCircle.invalidate()
-                delay(5000)
-                BigCircle.State = StatusButton.TRANSITION
-                BigCircle.invalidate()
-                delay(100)
-                BigCircle.State = StatusButton.CLOSE
-                BigCircle.invalidate()
-    }
-    }
+
+    suspend fun ClickMenu() = coroutineScope{
+        async {
+            BigCircle.State = StatusButton.TRANSITION
+            BigCircle.invalidate()
+            delay(100)
+            BigCircle.State = StatusButton.OPEN
+            BigCircle.invalidate()
+            delay(3000)
+            BigCircle.State = StatusButton.TRANSITION
+            BigCircle.invalidate()
+            delay(100)
+            BigCircle.State = StatusButton.CLOSE
+            BigCircle.invalidate()
+            return@async
+    }}
+
 
 
     fun Stable(){
