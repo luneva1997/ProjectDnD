@@ -11,4 +11,13 @@
     <string name="button">Кнопка меню</string>
 
     <string name="Alert">Данный модуль в данный момент находится в стадии разработки. Пожалуйста, подождите. Пока можете сделать пожертвование для разработки</string>
+
+    <string name="adventure_list_empty">Вы еще не побывали ни в одном приключении</string>
+
+    <string name="create_adventure_name">Название:</string>
+    <string name="create_adventure_description">Описание:</string>
+    <string name="create_adventure_success">Приключение успешно создано!</string>
+    <string name="create_adventure_create">Создать</string>
+    <string name="create_adventure_name_cannot_be_empty">Название не может быть пустым</string>
+    <string name="create_adventure_description_cannot_be_empty">Описание не может быть пустым</string>
 </resources>

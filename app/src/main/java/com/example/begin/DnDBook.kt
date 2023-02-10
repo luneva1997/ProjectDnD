@@ -1,9 +1,10 @@
 package com.example.begin
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.example.begin.presentation.adventures.list.AdventuresListActivity
 
 class DnDBook : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,8 +12,8 @@ class DnDBook : AppCompatActivity() {
         setContentView(R.layout.activity_dn_dbook)
     }
 
-    fun back(view: View){
-        val intent = Intent(this, MainActivity::class.java)
+    fun back(view: View) {
+        val intent = Intent(this, AdventuresListActivity::class.java)
         startActivity(intent)
     }
 }

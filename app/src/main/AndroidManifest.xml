@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".DndProjectApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -10,6 +11,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         tools:targetApi="31">
+        <activity
+            android:name=".presentation.adventures.list.AdventuresListActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Note"
             android:exported="true"
@@ -71,14 +83,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Adventure"
+            android:name=".AdventureActivity"
             android:exported="true"
             android:label="@string/title_activity_adventure"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".presentation.adventures.list.AdventuresListActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".presentation.adventures.list.AdventuresListActivity" />
             <intent-filter>
                 <action android:name=".Adventure" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -88,11 +100,11 @@
             android:name=".DnDBook"
             android:exported="true"
             android:label="@string/title_activity_dndbook"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".presentation.adventures.list.AdventuresListActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".presentation.adventures.list.AdventuresListActivity" />/>
             <intent-filter>
                 <action android:name=".DnDBook" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -102,18 +114,20 @@
             android:name=".Settings"
             android:exported="true"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".presentation.adventures.list.AdventuresListActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-
+                android:value=".presentation.adventures.list.AdventuresListActivity" />
             <intent-filter>
                 <action android:name=".Settings" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.begin.presentation.adventures.create.CreateAdventureActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

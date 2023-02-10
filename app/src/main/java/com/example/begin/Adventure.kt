@@ -6,25 +6,28 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
-import com.example.begin.menu.BackgroundMenu
-import com.example.begin.menu.BigCircleMenu
-import com.example.begin.menu.CircleMenu
+import com.example.begin.menu.Background
+import com.example.begin.menu.BigCircle
+import com.example.begin.menu.Circle
 import com.example.begin.menu.StatusButton
+import com.example.begin.presentation.adventures.list.AdventuresListActivity
+import kotlinx.coroutines.*
 
 
 class Adventure : AppCompatActivity() {
 
+    val scope = CoroutineScope(Dispatchers.Main.immediate + SupervisorJob())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adventure)
 
-        val menu = findViewById<BigCircleMenu>(R.id.big_menu)
-        val background = findViewById<BackgroundMenu>(R.id.background)
-        val first = findViewById<CircleMenu>(R.id.circle_menu1)
-        val second = findViewById<CircleMenu>(R.id.circle_menu2)
-        val third = findViewById<CircleMenu>(R.id.circle_menu3)
-        val fourth = findViewById<CircleMenu>(R.id.circle_menu4)
-        val fifth = findViewById<CircleMenu>(R.id.circle_menu5)
+        var menuCircle = findViewById<BigCircle>(R.id.AddCircle)
+        var background = findViewById<Background>(R.id.background)
+        var first = findViewById<Circle>(R.id.First)
+        var second = findViewById<Circle>(R.id.Second)
+        var third = findViewById<Circle>(R.id.Third)
+        var fourth = findViewById<Circle>(R.id.Fourth)
+        var fifth = findViewById<Circle>(R.id.Fifth)
 
         background.alpha = 0F
         background.isInvisible = true
@@ -33,7 +36,7 @@ class Adventure : AppCompatActivity() {
         third.isInvisible = true
         fourth.isInvisible = true
         fifth.isInvisible = true
-    }
+
 
         fun back(view: View) {
             val intent = Intent(this, MainActivity::class.java)
@@ -138,4 +141,7 @@ class Adventure : AppCompatActivity() {
         val intent = Intent(this, Note::class.java)
         startActivity(intent)
     }
+        fun back(view: View) {
+            val intent = Intent(this, AdventuresListActivity::class.java)
+            startActivity(intent)
 }
