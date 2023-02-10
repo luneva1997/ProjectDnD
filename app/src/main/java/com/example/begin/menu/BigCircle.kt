@@ -9,19 +9,17 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat.getColor
 import com.example.begin.R
-import kotlinx.coroutines.*
 
 
-class BigCircle (context: Context, attr: AttributeSet?=null): View(context, attr){
+class BigCircle (context: Context, attr: AttributeSet?=null): View(context, attr) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val path = Path()
     private var color1 = getColor(context, R.color.light_grey_green)
     private var color2 = getColor(context, R.color.green)
-    private var color3 = getColor(context, R.color.blue)
+    private var color3 = getColor(context, R.color.black)
     var State = StatusButton.CLOSE
     private var devider = 10
     var BigCircleDiametr = getScreenWidth()/devider*2
-    val scope = CoroutineScope(Dispatchers.IO)
 
     fun getScreenWidth(): Int{
         return Resources.getSystem().displayMetrics.widthPixels
@@ -36,41 +34,72 @@ class BigCircle (context: Context, attr: AttributeSet?=null): View(context, attr
         drawButton(canvas)
     }
 
+
     private fun drawButton(canvas: Canvas){
         path.reset()
         if (State == StatusButton.CLOSE) {
             drawCircle(canvas, color1, devider.toDouble())
         }
+        if (State == StatusButton.TRANSIRIONONE){
+            var d = devider
+            var dd = 0
+            while (d > 0){
+                drawCircle(canvas, color1, (d).toDouble())
+                d --
+            }
+            while (dd<devider*1.1){
+                drawCircle(canvas, color3, (devider*1.1).toDouble())
+                dd ++
+            }
+        }
         if (State == StatusButton.TRANSITION) {
             drawCircle(canvas, color2, (devider).toDouble())
         }
+        //if (State == StatusButton.TRANSITIONTWO){
+         //   var d = 0
+         //   var dd = devider*1.1
+         //   while(dd>0){
+         //       drawCircle(canvas, color1, (dd).toDouble())
+         //       dd --
+         //   }
+        //    while (d<devider){
+        //        drawCircle(canvas, color3, (d).toDouble())
+        //        d ++
+        //    }
+        //}
         if (State == StatusButton.OPEN) {
             drawCircle(canvas, color3, (devider*1.1).toDouble())
             }
         }
-    var BigCircle = findViewById<BigCircle>(R.id.AddCircle)
 
-    suspend fun ClickMenu() = coroutineScope{
-        async {
-            BigCircle.State = StatusButton.TRANSITION
-            BigCircle.invalidate()
-            delay(100)
-            BigCircle.State = StatusButton.OPEN
-            BigCircle.invalidate()
-            delay(3000)
-            BigCircle.State = StatusButton.TRANSITION
-            BigCircle.invalidate()
-            delay(100)
-            BigCircle.State = StatusButton.CLOSE
-            BigCircle.invalidate()
-            return@async
-    }}
+
+
+    fun check(){
+        if (State == StatusButton.CLOSE){
+            State = StatusButton.OPEN
+            invalidate()
+        }
+        if (State == StatusButton.OPEN){
+            State = StatusButton.CLOSE
+            invalidate()
+        }
+    }
+
+    fun ClickMenu() {
+            State = StatusButton.TRANSITION
+            invalidate()
+            State = StatusButton.OPEN
+            invalidate()
+            State = StatusButton.TRANSITION
+            invalidate()
+            State = StatusButton.CLOSE
+            invalidate() }
 
 
 
     fun Stable(){
-        BigCircle.State = StatusButton.CLOSE
-        BigCircle.invalidate()
+        State = StatusButton.CLOSE
+        invalidate()
     }
 
 

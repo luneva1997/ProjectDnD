@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <com.example.begin.menu.GroupMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.example.begin.menu.BigCircleMenu
+            android:id="@+id/big_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="bigCircle">
+    </com.example.begin.menu.BigCircleMenu>
+
+    <com.example.begin.menu.BackgroundMenu
+            android:id="@+id/background_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    </com.example.begin.menu.BackgroundMenu>
+
+        <com.example.begin.menu.CircleMenu
+            android:id="@+id/circle_menu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="firstTest">
+        </com.example.begin.menu.CircleMenu>
+
+        <com.example.begin.menu.CircleMenu
+            android:id="@+id/circle_menu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    </com.example.begin.menu.CircleMenu>
+
+        <com.example.begin.menu.CircleMenu
+            android:id="@+id/circle_menu3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.example.begin.menu.CircleMenu>
+
+        <com.example.begin.menu.CircleMenu
+            android:id="@+id/circle_menu4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.example.begin.menu.CircleMenu>
+
+        <com.example.begin.menu.CircleMenu
+            android:id="@+id/circle_menu5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.example.begin.menu.CircleMenu>
+
+    </com.example.begin.menu.GroupMenu>
+</androidx.constraintlayout.widget.ConstraintLayout>
