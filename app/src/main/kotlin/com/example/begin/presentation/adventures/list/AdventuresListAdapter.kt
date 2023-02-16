@@ -14,7 +14,7 @@ class AdventuresListAdapter(
     private val adventureClickListener: AdventureClickListener,
 ) : RecyclerView.Adapter<AdventuresListAdapter.ViewHolder>() {
 
-    private val adventures: MutableList<Adventure> = mutableListOf()
+    val adventures: MutableList<Adventure> = mutableListOf()
 
     override fun getItemCount(): Int = adventures.size
 
@@ -47,4 +47,5 @@ class AdventuresListAdapter(
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
 }

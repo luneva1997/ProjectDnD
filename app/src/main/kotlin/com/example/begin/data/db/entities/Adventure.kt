@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 class Adventure(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    val description: String,
+    val description: String = "",
     val status: Status = Status.IN_PROGRESS
 ) {
     enum class Status {

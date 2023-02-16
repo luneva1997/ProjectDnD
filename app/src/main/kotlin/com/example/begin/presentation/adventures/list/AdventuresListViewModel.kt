@@ -15,8 +15,7 @@ class AdventuresListViewModel(
         get() = AdventuresListState.Loading
 
     override fun onNewEvent(event: AdventuresListEvent) {
-        when (event) {
-            AdventuresListEvent.Load -> {
+        if (event == AdventuresListEvent.Load) {
                 yield(AdventuresListState.Loading)
                 viewModelScope.launch(Dispatchers.IO) {
                     val adventures = adventuresDao.getAll()
@@ -29,7 +28,7 @@ class AdventuresListViewModel(
             }
         }
     }
-}
+
 
 sealed interface AdventuresListState {
     object Empty : AdventuresListState

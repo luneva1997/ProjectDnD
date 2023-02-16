@@ -18,28 +18,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:focusable="true"
-            android:onClick="bigCircle">
-    </com.example.begin.menu.BigCircleMenu>
+            android:focusable="true">
+        </com.example.begin.menu.BigCircleMenu>
 
-    <com.example.begin.menu.BackgroundMenu
+        <com.example.begin.menu.BackgroundMenu
             android:id="@+id/background_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-    </com.example.begin.menu.BackgroundMenu>
+        </com.example.begin.menu.BackgroundMenu>
 
         <com.example.begin.menu.CircleMenu
             android:id="@+id/circle_menu1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="firstTest">
+            android:layout_height="wrap_content">
         </com.example.begin.menu.CircleMenu>
 
         <com.example.begin.menu.CircleMenu
             android:id="@+id/circle_menu2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-    </com.example.begin.menu.CircleMenu>
+        </com.example.begin.menu.CircleMenu>
 
         <com.example.begin.menu.CircleMenu
             android:id="@+id/circle_menu3"

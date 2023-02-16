@@ -5,19 +5,46 @@
     <string name="title_activity_dndbook">ДнД книга</string>
     <string name="title_activity_settings">Настройки</string>
 
-    <string name="DnDBook">DnDBook Button</string>
-    <string name="Adventure">Add adventure Button</string>
-    <string name="Settings">Settings Button</string>
+    <string name="title_character_list">Персонаж</string>
+    <string name="title_location_list">Локация</string>
+    <string name="title_npc_list">НПС</string>
+    <string name="title_qwest_list">Квест</string>
+    <string name="title_note_list">Записи</string>
+    <string name="list_empty">Здесь нет еще ни одной записи</string>
+
+    <string name="DnDBook">Кнопка Днд книги</string>
+    <string name="Adventure">Кнопка добавления приключения</string>
+    <string name="Settings">Кнопка настроек</string>
     <string name="button">Кнопка меню</string>
 
     <string name="Alert">Данный модуль в данный момент находится в стадии разработки. Пожалуйста, подождите. Пока можете сделать пожертвование для разработки</string>
 
     <string name="adventure_list_empty">Вы еще не побывали ни в одном приключении</string>
 
-    <string name="create_adventure_name">Название:</string>
-    <string name="create_adventure_description">Описание:</string>
-    <string name="create_adventure_success">Приключение успешно создано!</string>
+    <string name="create_adventure_name">Название</string>
+    <string name="create_adventure_description">Описание</string>
+    <string name="create_adventure_success">Приключение успешно создано\!</string>
     <string name="create_adventure_create">Создать</string>
     <string name="create_adventure_name_cannot_be_empty">Название не может быть пустым</string>
     <string name="create_adventure_description_cannot_be_empty">Описание не может быть пустым</string>
+
+    <string name="location_name">Название локации</string>
+    <string name="location_description">Заметка к локации</string>
+
+    <string name="npc_name">Имя НПС</string>
+    <string name="npc_description">Заметка к НПС</string>
+
+    <string name="qwest_name">Название квеста</string>
+    <string name="qwest_description">Заметка к квесту</string>
+
+    <string name="note_name">Краткое название</string>
+    <string name="note_description">Содержание заметки</string>
+
+    <string name="tab1">Локации</string>
+    <string name="tab2">NPC</string>
+    <string name="tab3">Квесты</string>
+    <string name="title_activity_tabs">Tabs</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
 </resources>

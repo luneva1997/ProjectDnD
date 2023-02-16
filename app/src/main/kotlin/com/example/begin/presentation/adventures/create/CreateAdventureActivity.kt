@@ -76,11 +76,6 @@ class CreateAdventureActivity : AppCompatActivity() {
                 return
             }
 
-            if (description.isEmpty()) {
-                showToast(R.string.create_adventure_name_cannot_be_empty)
-                return
-            }
-
             viewModel.emit(CreateAdventureEvent.Create(name, description))
         }
     }

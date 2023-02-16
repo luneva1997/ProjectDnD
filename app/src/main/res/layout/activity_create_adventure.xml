@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/green"
     android:padding="20dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -27,23 +28,41 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_adventure_name" />
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/text_shape"
+            android:text="@string/create_adventure_name"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/adventure_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp" />
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/text_shape"
+            android:textColor="@color/green"
+            android:textSize="16dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_adventure_name" />
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/text_shape"
+            android:text="@string/create_adventure_description"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/adventure_description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_shape"
+            android:textColor="@color/green"
+            android:textSize="16dp"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -51,6 +70,9 @@
         android:id="@+id/create_adventure_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create_adventure_create" />
+        style="@style/Widget.Theme.Begin.MyView.MyButton"
+        android:text="@string/create_adventure_create"
+        android:textColor="@color/green"
+        android:textSize="20dp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

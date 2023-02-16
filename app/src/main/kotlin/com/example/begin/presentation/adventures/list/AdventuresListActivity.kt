@@ -85,6 +85,10 @@ class AdventuresListActivity : AppCompatActivity() {
         }
     }
 
+    private fun deleteAdventure(view: View){
+
+    }
+
     fun toDnDBook(view: View) {
         val intent = Intent(this, DnDBook::class.java)
         startActivity(intent)
